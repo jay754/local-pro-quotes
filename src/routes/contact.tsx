@@ -1,23 +1,58 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Phone, MessageSquare, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MessageSquare, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { submitContact } from "@/lib/contact.functions";
+import { useServerFn } from "@tanstack/react-start";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
-      meta: [
-        { title: "Contact Us — Get Home Quotes" },
-        { name: "description", content: "Questions? Need help finding a pro? Contact the Get Home Quotes team." },
-        { property: "og:title", content: "Contact Get Home Quotes" },
-        { property: "og:description", content: "Reach out with questions about finding a local professional." },
-      ],
+    meta: [
+      { title: "Contact Us — Get Home Quotes" },
+      { name: "description", content: "Questions? Need help finding a pro? Contact the Get Home Quotes team." },
+      { property: "og:title", content: "Contact Get Home Quotes" },
+      { property: "og:description", content: "Reach out with questions about finding a local professional." },
+    ],
   }),
   component: ContactPage,
 });
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const sendContact = useServerFn(submitContact);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (error) setError(null);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    try {
+      await sendContact({ data: formData });
+      setSent(true);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Nav />
@@ -66,19 +101,72 @@ function ContactPage() {
               </div>
             ) : (
               <form
-                onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+                onSubmit={handleSubmit}
                 className="rounded-3xl border border-border bg-card p-8 shadow-lift"
               >
+                {error && (
+                  <div className="mb-4 flex items-center gap-3 rounded-xl border border-destructive/20 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+                    <AlertCircle className="h-4 w-4 shrink-0" />
+                    <span>{error}</span>
+                  </div>
+                )}
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label="Name"><input required className="cinput" placeholder="Your name" /></Field>
-                  <Field label="Email"><input required type="email" className="cinput" placeholder="you@email.com" /></Field>
-                  <Field label="Phone" full><input type="tel" className="cinput" placeholder="(555) 000-0000" /></Field>
+                  <Field label="Name">
+                    <input
+                      required
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="cinput"
+                      placeholder="Your name"
+                    />
+                  </Field>
+                  <Field label="Email">
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="cinput"
+                      placeholder="you@email.com"
+                    />
+                  </Field>
+                  <Field label="Phone" full>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="cinput"
+                      placeholder="(555) 000-0000"
+                    />
+                  </Field>
                   <Field label="Message" full>
-                    <textarea required rows={6} className="cinput resize-none" placeholder="How can we help?" />
+                    <textarea
+                      required
+                      name="message"
+                      rows={6}
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="cinput resize-none"
+                      placeholder="How can we help?"
+                    />
                   </Field>
                 </div>
-                <button type="submit" className="mt-6 w-full rounded-full bg-navy px-6 py-4 text-base font-semibold text-navy-foreground shadow-card transition-all hover:bg-brand hover:shadow-glow">
-                  Send Message
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-navy px-6 py-4 text-base font-semibold text-navy-foreground shadow-card transition-all hover:bg-brand hover:shadow-glow disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {loading ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
                 <style>{`
                   .cinput {
