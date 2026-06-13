@@ -18,7 +18,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="md:col-start-4">
             <h4 className="text-sm font-semibold text-navy">Company</h4>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li><Link to="/" className="hover:text-navy">Home</Link></li>
@@ -26,14 +26,6 @@ export function Footer() {
               <li><Link to="/contact" className="hover:text-navy">Contact</Link></li>
               <li><a href="#" className="hover:text-navy">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-navy">Terms of Service</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-navy">Get in touch</h4>
-            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> hello@gethomequotes.com</li>
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> (555) 000-0000</li>
             </ul>
           </div>
         </div>
