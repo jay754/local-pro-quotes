@@ -14,7 +14,7 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
         </div>
         <h3 className="mt-4 font-display text-2xl font-bold text-navy">Request received</h3>
         <p className="mt-2 text-muted-foreground">
-          We're matching you with local professionals now. You'll hear back shortly with free quotes.
+          We're matching you with local professionals now. You'll hear back shortly from matched pros.
         </p>
       </div>
     );
@@ -63,7 +63,7 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
         type="submit"
         className="mt-6 w-full rounded-full bg-navy px-6 py-4 text-base font-semibold text-navy-foreground shadow-card transition-all hover:bg-brand hover:shadow-glow"
       >
-        Get My Free Quote
+        Find My Pro
       </button>
       <p className="mt-3 text-center text-xs text-muted-foreground">
         Free to use. No obligation. Your info is shared only with matched local pros.
