@@ -8,12 +8,12 @@ import { services } from "@/lib/services";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: "Get Home Quotes — Free Quotes From Trusted Local Pros" },
-      { name: "description", content: "Tell us what you need and we'll connect you with local professionals for a free quote. Gutter cleaning, pressure washing, junk removal and more." },
-      { property: "og:title", content: "Get Home Quotes — Free Quotes From Trusted Local Pros" },
-      { property: "og:description", content: "Free, fast quotes from trusted local home service professionals." },
-    ],
+      meta: [
+        { title: "Get Home Quotes — Find Trusted Local Pros" },
+        { name: "description", content: "Tell us what you need and we'll connect you with local professionals. Gutter cleaning, pressure washing, junk removal and more." },
+        { property: "og:title", content: "Get Home Quotes — Find Trusted Local Pros" },
+        { property: "og:description", content: "Find trusted local home service professionals." },
+      ],
   }),
   component: Home,
 });
