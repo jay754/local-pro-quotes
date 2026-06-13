@@ -8,9 +8,9 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Home Services — Get Home Quotes" },
-      { name: "description", content: "Browse home services we help you find quotes for: gutter cleaning, window cleaning, pressure washing, dryer vent cleaning, junk removal and more." },
+      { name: "description", content: "Browse home services we help you find pros for: gutter cleaning, window cleaning, pressure washing, dryer vent cleaning, junk removal and more." },
       { property: "og:title", content: "Home Services We Help You Find" },
-      { property: "og:description", content: "Browse home services and request free quotes from trusted local professionals." },
+      { property: "og:description", content: "Browse home services and find trusted local professionals." },
     ],
   }),
   component: ServicesPage,
@@ -28,7 +28,7 @@ function ServicesPage() {
             Home Services We Help You Find
           </h1>
           <p className="mt-5 text-lg text-muted-foreground sm:text-xl">
-            Browse the services below and request a free quote from local professionals in your area.
+            Browse the services below and find local professionals in your area.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ function ServicesPage() {
                     hash="quote"
                     className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-all hover:bg-brand hover:shadow-glow"
                   >
-                    Request Quote <ArrowRight className="h-4 w-4" />
+                    Get Started <ArrowRight className="h-4 w-4" />
                   </Link>
                 </article>
               );
@@ -79,9 +79,9 @@ function ServicesPage() {
       <section className="bg-navy py-20 text-navy-foreground">
         <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
           <h2 className="font-display text-4xl font-bold sm:text-5xl">Ready to get started?</h2>
-          <p className="mt-4 text-lg text-white/70">One form. Multiple quotes. Free to use.</p>
+          <p className="mt-4 text-lg text-white/70">One form. Multiple pros. Free to use.</p>
           <Link to="/" hash="quote" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-base font-semibold text-navy transition-all hover:bg-brand hover:text-white">
-            Get Free Quotes <ArrowRight className="h-4 w-4" />
+            Find a Pro <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
