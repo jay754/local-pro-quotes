@@ -14,7 +14,7 @@ export function Footer() {
               Get Home Quotes
             </div>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              Connecting homeowners with trusted local service professionals. Get free quotes in minutes.
+              Connecting homeowners with trusted local service professionals. Get matched in minutes.
             </p>
           </div>
 
@@ -40,7 +40,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} Get Home Quotes. All rights reserved.</p>
-          <p>Free quote service. Not a contractor.</p>
+          <p>Free matching service. Not a contractor.</p>
         </div>
       </div>
     </footer>

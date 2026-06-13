@@ -50,7 +50,7 @@ export function Nav() {
             hash="quote"
             className="rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-navy-foreground shadow-card transition-all hover:bg-brand hover:shadow-glow"
           >
-            Get Free Quotes
+            Find a Pro
           </Link>
         </div>
 
@@ -82,7 +82,7 @@ export function Nav() {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-navy px-5 py-3 text-center text-sm font-semibold text-navy-foreground"
             >
-              Get Free Quotes
+              Find a Pro
             </Link>
           </div>
         </div>

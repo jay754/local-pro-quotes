@@ -6,12 +6,12 @@ import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
-    meta: [
-      { title: "Contact Us — Get Home Quotes" },
-      { name: "description", content: "Questions? Need help with a quote request? Contact the Get Home Quotes team." },
-      { property: "og:title", content: "Contact Get Home Quotes" },
-      { property: "og:description", content: "Reach out with questions about your quote request." },
-    ],
+      meta: [
+        { title: "Contact Us — Get Home Quotes" },
+        { name: "description", content: "Questions? Need help finding a pro? Contact the Get Home Quotes team." },
+        { property: "og:title", content: "Contact Get Home Quotes" },
+        { property: "og:description", content: "Reach out with questions about finding a local professional." },
+      ],
   }),
   component: ContactPage,
 });
@@ -27,7 +27,7 @@ function ContactPage() {
           <p className="text-sm font-semibold uppercase tracking-wider text-brand">Get in touch</p>
           <h1 className="mt-3 font-display text-5xl font-bold tracking-tight text-navy sm:text-6xl">Contact Us</h1>
           <p className="mt-5 text-lg text-muted-foreground sm:text-xl">
-            Questions? Need help with a quote request? We're here to help.
+            Questions? Need help finding a pro? We're here to help.
           </p>
         </div>
       </section>
