@@ -46,16 +46,8 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
         <Field label="Email"><input required type="email" className="input" placeholder="you@email.com" /></Field>
         <Field label="Phone Number"><input required type="tel" className="input" placeholder="(555) 000-0000" /></Field>
         <Field label="Postal Code"><input required className="input" placeholder="12345" /></Field>
-        <Field label="Property Address" full><input required className="input" placeholder="123 Main St" /></Field>
         <Field label="Project Description" full>
           <textarea rows={4} className="input resize-none" placeholder="Briefly describe what you need…" />
-        </Field>
-        <Field label="Upload Photos (optional)" full>
-          <label className="flex cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-dashed border-border bg-surface px-4 py-6 text-sm text-muted-foreground transition-colors hover:border-brand hover:text-brand">
-            <Upload className="h-4 w-4" />
-            <span>Click to upload or drag and drop</span>
-            <input type="file" multiple accept="image/*" className="hidden" />
-          </label>
         </Field>
       </div>
 

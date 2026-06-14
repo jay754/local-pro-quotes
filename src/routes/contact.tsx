@@ -1,68 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Mail, Phone, MessageSquare, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, Phone, MessageSquare } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { submitContact } from "@/lib/contact.functions";
-import { useServerFn } from "@tanstack/react-start";
+import { QuoteForm } from "@/components/QuoteForm";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Us — Get Home Quotes" },
-      { name: "description", content: "Questions? Need help finding a pro? Contact the Get Home Quotes team." },
+      {
+        name: "description",
+        content: "Questions? Need help finding a pro? Contact the Get Home Quotes team.",
+      },
       { property: "og:title", content: "Contact Get Home Quotes" },
-      { property: "og:description", content: "Reach out with questions about finding a local professional." },
+      {
+        property: "og:description",
+        content: "Reach out with questions about finding a local professional.",
+      },
     ],
   }),
   component: ContactPage,
 });
 
 function ContactPage() {
-  const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const sendContact = useServerFn(submitContact);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    if (error) setError(null);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-    try {
-      await sendContact({ data: formData });
-      setSent(true);
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
-      setError(message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Nav />
 
       <section className="bg-gradient-soft py-16 lg:py-24">
         <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-wider text-brand">Get in touch</p>
-          <h1 className="mt-3 font-display text-5xl font-bold tracking-tight text-navy sm:text-6xl">Contact Us</h1>
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand">
+            Get in touch
+          </p>
+          <h1 className="mt-3 font-display text-5xl font-bold tracking-tight text-navy sm:text-6xl">
+            Contact Us
+          </h1>
           <p className="mt-5 text-lg text-muted-foreground sm:text-xl">
-            Questions? Need help finding a pro? We're here to help.
+            Questions? Need help finding a pro? Submit your request and we’ll help match you.
           </p>
         </div>
       </section>
@@ -73,11 +47,15 @@ function ContactPage() {
             {[
               { i: Mail, t: "Email us", d: "hello@gethomequotes.com" },
               { i: Phone, t: "Call us", d: "(555) 000-0000" },
-              { i: MessageSquare, t: "Live support", d: "Mon–Fri, 9am–6pm" },
+              { i: MessageSquare, t: "Live support", d: "24/7" },
             ].map((c) => {
               const Icon = c.i;
+
               return (
-                <div key={c.t} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-card">
+                <div
+                  key={c.t}
+                  className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-card"
+                >
                   <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand">
                     <Icon className="h-5 w-5" />
                   </div>
@@ -91,115 +69,12 @@ function ContactPage() {
           </div>
 
           <div className="lg:col-span-3">
-            {sent ? (
-              <div className="rounded-3xl border border-border bg-card p-10 text-center shadow-lift">
-                <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand/10 text-brand">
-                  <CheckCircle2 className="h-7 w-7" />
-                </div>
-                <h3 className="mt-4 font-display text-2xl font-bold text-navy">Message sent</h3>
-                <p className="mt-2 text-muted-foreground">Thanks for reaching out. We'll get back to you soon.</p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="rounded-3xl border border-border bg-card p-8 shadow-lift"
-              >
-                {error && (
-                  <div className="mb-4 flex items-center gap-3 rounded-xl border border-destructive/20 bg-destructive/5 px-4 py-3 text-sm text-destructive">
-                    <AlertCircle className="h-4 w-4 shrink-0" />
-                    <span>{error}</span>
-                  </div>
-                )}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label="Name">
-                    <input
-                      required
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="cinput"
-                      placeholder="Your name"
-                    />
-                  </Field>
-                  <Field label="Email">
-                    <input
-                      required
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="cinput"
-                      placeholder="you@email.com"
-                    />
-                  </Field>
-                  <Field label="Phone" full>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="cinput"
-                      placeholder="(555) 000-0000"
-                    />
-                  </Field>
-                  <Field label="Message" full>
-                    <textarea
-                      required
-                      name="message"
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="cinput resize-none"
-                      placeholder="How can we help?"
-                    />
-                  </Field>
-                </div>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-navy px-6 py-4 text-base font-semibold text-navy-foreground shadow-card transition-all hover:bg-brand hover:shadow-glow disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                      Sending…
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
-                </button>
-                <style>{`
-                  .cinput {
-                    width: 100%;
-                    border-radius: 0.75rem;
-                    border: 1px solid var(--color-border);
-                    background: var(--color-background);
-                    padding: 0.75rem 1rem;
-                    font-size: 0.95rem;
-                    color: var(--color-foreground);
-                  }
-                  .cinput:focus {
-                    outline: none;
-                    border-color: var(--color-brand);
-                    box-shadow: 0 0 0 3px oklch(0.55 0.20 255 / 0.15);
-                  }
-                `}</style>
-              </form>
-            )}
+            <QuoteForm />
           </div>
         </div>
       </section>
 
       <Footer />
     </div>
-  );
-}
-
-function Field({ label, full, children }: { label: string; full?: boolean; children: React.ReactNode }) {
-  return (
-    <label className={`block ${full ? "sm:col-span-2" : ""}`}>
-      <span className="mb-1.5 block text-sm font-medium text-navy">{label}</span>
-      {children}
-    </label>
   );
 }
