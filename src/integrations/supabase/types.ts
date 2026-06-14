@@ -14,30 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      contact_submissions: {
+      quote_requests: {
         Row: {
           created_at: string
+          description: string | null
           email: string
           id: string
-          message: string
           name: string
-          phone: string | null
+          phone: string
+          postal_code: string
+          service: string
         }
         Insert: {
           created_at?: string
+          description?: string | null
           email: string
           id?: string
-          message: string
           name: string
-          phone?: string | null
+          phone: string
+          postal_code: string
+          service: string
         }
         Update: {
           created_at?: string
+          description?: string | null
           email?: string
           id?: string
-          message?: string
           name?: string
-          phone?: string | null
+          phone?: string
+          postal_code?: string
+          service?: string
         }
         Relationships: []
       }
