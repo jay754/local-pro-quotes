@@ -1,10 +1,45 @@
 import { useState } from "react";
-import { Upload, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { useServerFn } from "@tanstack/react-start";
 import { services } from "@/lib/services";
+import { submitQuoteRequest } from "@/lib/quotes.functions";
 
 export function QuoteForm({ defaultService }: { defaultService?: string }) {
   const [submitted, setSubmitted] = useState(false);
-  const [service, setService] = useState(defaultService ?? "");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    service: defaultService ?? "",
+    name: "",
+    email: "",
+    phone: "",
+    postalCode: "",
+    description: "",
+  });
+
+  const submit = useServerFn(submitQuoteRequest);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (error) setError(null);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    try {
+      await submit({ data: formData });
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (submitted) {
     return (
@@ -22,18 +57,23 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
 
   return (
     <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSubmitted(true);
-      }}
+      onSubmit={handleSubmit}
       className="rounded-3xl border border-border bg-card p-6 shadow-lift sm:p-8"
     >
+      {error && (
+        <div className="mb-4 flex items-center gap-3 rounded-xl border border-destructive/20 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+          <AlertCircle className="h-4 w-4 shrink-0" />
+          <span>{error}</span>
+        </div>
+      )}
+
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Service Needed" full>
           <select
             required
-            value={service}
-            onChange={(e) => setService(e.target.value)}
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
             className="input"
           >
             <option value="">Select a service…</option>
@@ -42,20 +82,78 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
             ))}
           </select>
         </Field>
-        <Field label="Name"><input required className="input" placeholder="Jane Doe" /></Field>
-        <Field label="Email"><input required type="email" className="input" placeholder="you@email.com" /></Field>
-        <Field label="Phone Number"><input required type="tel" className="input" placeholder="(555) 000-0000" /></Field>
-        <Field label="Postal Code"><input required className="input" placeholder="12345" /></Field>
+        <Field label="Name">
+          <input
+            required
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="input"
+            placeholder="Jane Doe"
+            maxLength={100}
+          />
+        </Field>
+        <Field label="Email">
+          <input
+            required
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="input"
+            placeholder="you@email.com"
+            maxLength={255}
+          />
+        </Field>
+        <Field label="Phone Number">
+          <input
+            required
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="input"
+            placeholder="(555) 000-0000"
+            maxLength={50}
+          />
+        </Field>
+        <Field label="Postal Code">
+          <input
+            required
+            name="postalCode"
+            value={formData.postalCode}
+            onChange={handleChange}
+            className="input"
+            placeholder="12345"
+            maxLength={20}
+          />
+        </Field>
         <Field label="Project Description (Optional)" full>
-          <textarea rows={4} className="input resize-none" placeholder="Briefly describe what you need…" />
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            rows={4}
+            className="input resize-none"
+            placeholder="Briefly describe what you need…"
+            maxLength={2000}
+          />
         </Field>
       </div>
 
       <button
         type="submit"
-        className="mt-6 w-full rounded-full bg-navy px-6 py-4 text-base font-semibold text-navy-foreground shadow-card transition-all hover:bg-brand hover:shadow-glow"
+        disabled={loading}
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-navy px-6 py-4 text-base font-semibold text-navy-foreground shadow-card transition-all hover:bg-brand hover:shadow-glow disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Find My Pro
+        {loading ? (
+          <>
+            <Loader2 className="h-4 w-4 animate-spin" />
+            Submitting…
+          </>
+        ) : (
+          "Find My Pro"
+        )}
       </button>
       <p className="mt-3 text-center text-xs text-muted-foreground">
         Free to use. No obligation. Your info is shared only with matched local pros.
