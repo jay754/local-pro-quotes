@@ -46,7 +46,7 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
         <Field label="Email"><input required type="email" className="input" placeholder="you@email.com" /></Field>
         <Field label="Phone Number"><input required type="tel" className="input" placeholder="(555) 000-0000" /></Field>
         <Field label="Postal Code"><input required className="input" placeholder="12345" /></Field>
-        <Field label="Project Description" full>
+        <Field label="Project Description (Optional)" full>
           <textarea rows={4} className="input resize-none" placeholder="Briefly describe what you need…" />
         </Field>
       </div>

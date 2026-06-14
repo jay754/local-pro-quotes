@@ -45,7 +45,7 @@ function ContactPage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-5 lg:px-8">
           <div className="space-y-5 lg:col-span-2">
             {[
-              { i: Mail, t: "Email us", d: "hello@gethomequotes.com" },
+              { i: Mail, t: "Email us", d: "supporthomeqouteso@gmail.com" },
               { i: Phone, t: "Call us", d: "(555) 000-0000" },
               { i: MessageSquare, t: "Live support", d: "24/7" },
             ].map((c) => {
