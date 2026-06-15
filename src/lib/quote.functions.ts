@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { Resend } from "resend";
 
 const quoteSchema = z.object({
   service: z.string().min(1, "Service is required"),
@@ -27,6 +28,31 @@ export const submitQuote = createServerFn({ method: "POST" })
     if (error) {
       console.error("Quote submission error:", error);
       throw new Error("Failed to submit quote request.");
+    }
+
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const notifyEmail = process.env.LEAD_NOTIFY_EMAIL;
+
+    if (resendApiKey && notifyEmail) {
+      const resend = new Resend(resendApiKey);
+
+      await resend.emails.send({
+        from: "Get Home Quotes <onboarding@resend.dev>",
+        to: notifyEmail,
+        subject: `New lead: ${data.service}`,
+        text: `
+New quote request received:
+
+Service: ${data.service}
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Postal Code: ${data.postalCode}
+
+Description:
+${data.description || "No description provided."}
+        `.trim(),
+      });
     }
 
     return { success: true };
