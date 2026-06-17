@@ -37,7 +37,7 @@ export const submitQuote = createServerFn({ method: "POST" })
       const resend = new Resend(resendApiKey);
 
       await resend.emails.send({
-        from: "Get Home Quotes <onboarding@resend.dev>",
+        from: "Get Home Quotes <leads@gethomequotes.ca>",
         to: notifyEmail,
         subject: `New lead: ${data.service}`,
         text: `
