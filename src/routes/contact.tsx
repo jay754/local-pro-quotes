@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Phone, MessageSquare } from "lucide-react";
+import { Mail, MapPin, MessageSquare } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -45,8 +45,8 @@ function ContactPage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-5 lg:px-8">
           <div className="space-y-5 lg:col-span-2">
             {[
-              { i: Mail, t: "Email us", d: "supporthomeqoutes@gmail.com" },
-              { i: Phone, t: "Call us", d: "(555) 000-0000" },
+              { i: Mail, t: "Email us", d: "supporthomequotes@gmail.com" },
+              { i: MapPin, t: "Service Area", d: "Greater Toronto Area" },
               { i: MessageSquare, t: "Live support", d: "24/7" },
             ].map((c) => {
               const Icon = c.i;
