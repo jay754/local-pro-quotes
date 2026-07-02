@@ -11,6 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as GutterCleaningTorontoRouteImport } from './routes/gutter-cleaning-toronto'
+import { Route as GutterCleaningMississaugaRouteImport } from './routes/gutter-cleaning-mississauga'
+import { Route as GutterCleaningMarkhamRouteImport } from './routes/gutter-cleaning-markham'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +25,22 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GutterCleaningTorontoRoute = GutterCleaningTorontoRouteImport.update({
+  id: '/gutter-cleaning-toronto',
+  path: '/gutter-cleaning-toronto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GutterCleaningMississaugaRoute =
+  GutterCleaningMississaugaRouteImport.update({
+    id: '/gutter-cleaning-mississauga',
+    path: '/gutter-cleaning-mississauga',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GutterCleaningMarkhamRoute = GutterCleaningMarkhamRouteImport.update({
+  id: '/gutter-cleaning-markham',
+  path: '/gutter-cleaning-markham',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -38,12 +57,18 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/gutter-cleaning-markham': typeof GutterCleaningMarkhamRoute
+  '/gutter-cleaning-mississauga': typeof GutterCleaningMississaugaRoute
+  '/gutter-cleaning-toronto': typeof GutterCleaningTorontoRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/gutter-cleaning-markham': typeof GutterCleaningMarkhamRoute
+  '/gutter-cleaning-mississauga': typeof GutterCleaningMississaugaRoute
+  '/gutter-cleaning-toronto': typeof GutterCleaningTorontoRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -51,20 +76,48 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/gutter-cleaning-markham': typeof GutterCleaningMarkhamRoute
+  '/gutter-cleaning-mississauga': typeof GutterCleaningMississaugaRoute
+  '/gutter-cleaning-toronto': typeof GutterCleaningTorontoRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/services' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/gutter-cleaning-markham'
+    | '/gutter-cleaning-mississauga'
+    | '/gutter-cleaning-toronto'
+    | '/services'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/services' | '/sitemap.xml'
-  id: '__root__' | '/' | '/contact' | '/services' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/contact'
+    | '/gutter-cleaning-markham'
+    | '/gutter-cleaning-mississauga'
+    | '/gutter-cleaning-toronto'
+    | '/services'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/gutter-cleaning-markham'
+    | '/gutter-cleaning-mississauga'
+    | '/gutter-cleaning-toronto'
+    | '/services'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  GutterCleaningMarkhamRoute: typeof GutterCleaningMarkhamRoute
+  GutterCleaningMississaugaRoute: typeof GutterCleaningMississaugaRoute
+  GutterCleaningTorontoRoute: typeof GutterCleaningTorontoRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -83,6 +136,27 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning-toronto': {
+      id: '/gutter-cleaning-toronto'
+      path: '/gutter-cleaning-toronto'
+      fullPath: '/gutter-cleaning-toronto'
+      preLoaderRoute: typeof GutterCleaningTorontoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning-mississauga': {
+      id: '/gutter-cleaning-mississauga'
+      path: '/gutter-cleaning-mississauga'
+      fullPath: '/gutter-cleaning-mississauga'
+      preLoaderRoute: typeof GutterCleaningMississaugaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning-markham': {
+      id: '/gutter-cleaning-markham'
+      path: '/gutter-cleaning-markham'
+      fullPath: '/gutter-cleaning-markham'
+      preLoaderRoute: typeof GutterCleaningMarkhamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -105,6 +179,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  GutterCleaningMarkhamRoute: GutterCleaningMarkhamRoute,
+  GutterCleaningMississaugaRoute: GutterCleaningMississaugaRoute,
+  GutterCleaningTorontoRoute: GutterCleaningTorontoRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
