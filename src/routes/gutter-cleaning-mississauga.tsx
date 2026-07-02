@@ -237,7 +237,7 @@ function GutterCleaningMississaugaPage() {
           <div className="mt-10 space-y-8">
             <div>
               <h3 className="text-xl font-bold text-navy">
-                How often should gutters be cleaned in Missi?
+                How often should gutters be cleaned in Mississauga?
               </h3>
 
               <p className="mt-2 text-muted-foreground">
