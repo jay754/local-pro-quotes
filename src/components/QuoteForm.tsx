@@ -4,7 +4,19 @@ import { services } from "@/lib/services";
 import { useServerFn } from "@tanstack/react-start";
 import { submitQuote } from "@/lib/quote.functions";
 
-export function QuoteForm({ defaultService }: { defaultService?: string }) {
+type QuoteFormProps = {
+  defaultService?: string;
+  title?: string;
+  description?: string;
+  projectTypes?: string[];
+};
+
+export function QuoteForm({
+  defaultService,
+  title = "Request a Free Quote",
+  description = "Tell us about your project and submit your request online.",
+  projectTypes,
+}: QuoteFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -67,6 +79,15 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
       onSubmit={handleSubmit}
       className="rounded-3xl border border-border bg-card p-6 shadow-lift sm:p-8"
     >
+      <h2 className="text-3xl font-black text-navy">
+        {title}
+      </h2>
+
+      <p className="mt-3 mb-8 text-lg text-muted-foreground">
+        {description}
+      </p>
+
+
       {error && (
         <div className="mb-4 flex items-center gap-3 rounded-xl border border-destructive/20 bg-destructive/5 px-4 py-3 text-sm text-destructive">
           <AlertCircle className="h-4 w-4 shrink-0" />
@@ -75,23 +96,45 @@ export function QuoteForm({ defaultService }: { defaultService?: string }) {
       )}
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Service Needed" full>
-          <select
-            required
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            className="input"
-          >
-            <option value="">Select a service…</option>
+        {!defaultService && (
+          <Field label="Service Needed" full>
+            <select
+              required
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="input"
+            >
+              <option value="">Select a service...</option>
 
-            {services.map((s) => (
-              <option key={s.slug} value={s.slug}>
-                {s.name}
-              </option>
-            ))}
-          </select>
-        </Field>
+              {services.map((s) => (
+                <option key={s.slug} value={s.slug}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+          </Field>
+        )}
+
+        {projectTypes && (
+          <Field label="What needs service?" full>
+            <select
+              required
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              className="input"
+            >
+              <option value="">Select one...</option>
+
+              {projectTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+          </Field>
+        )}
 
         <Field label="Name">
           <input

@@ -15,7 +15,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 
-export const Route = createFileRoute("/gutter-cleaning-mississauga")({
+export const Route = createFileRoute("/gutter-cleaning/mississauga")({
   head: () => ({
     meta: [
       {
@@ -321,32 +321,25 @@ function GutterCleaningMississaugaPage() {
             </h2>
 
             <p className="mt-4 text-lg text-muted-foreground">
-              We help homeowners compare gutter cleaning quotes across the Greater
+              We help homeowners request gutter cleaning quotes across the Greater
               Toronto Area.
             </p>
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a
-              href="/gutter-cleaning-toronto"
-              className="rounded-full border border-border px-6 py-3 hover:bg-muted"
-            >
-              Toronto
-            </a>
-
-            <a
-              href="/gutter-cleaning-mississauga"
-              className="rounded-full border border-border px-6 py-3 hover:bg-muted"
-            >
-              Mississauga
-            </a>
-
-            <a
-              href="/gutter-cleaning-markham"
-              className="rounded-full border border-border px-6 py-3 hover:bg-muted"
-            >
-              Markham
-            </a>
+            {[
+              { name: "Toronto", href: "/gutter-cleaning/toronto" },
+              { name: "Mississauga", href: "/gutter-cleaning/mississauga" },
+              { name: "Markham", href: "/gutter-cleaning/markham" },
+            ].map((area) => (
+              <a
+                key={area.name}
+                href={area.href}
+                className="rounded-full border border-border px-6 py-3 font-semibold text-navy transition hover:bg-muted"
+              >
+                {area.name}
+              </a>
+            ))}
           </div>
         </div>
       </section>

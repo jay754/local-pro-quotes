@@ -15,7 +15,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 
-export const Route = createFileRoute("/gutter-cleaning-toronto")({
+export const Route = createFileRoute("/gutter-cleaning/toronto")({
   head: () => ({
     meta: [
       {
@@ -309,48 +309,41 @@ function GutterCleaningTorontoPage() {
         </div>
       </section>
 
-            {/* AREAS WE SERVE */}
-      <section className="bg-background py-16">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider text-brand">
-              Areas We Serve
-            </p>
+      {/* AREAS WE SERVE */}
+        <section className="bg-background py-16">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-wider text-brand">
+                Areas We Serve
+              </p>
 
-            <h2 className="mt-3 font-display text-4xl font-bold text-navy">
-              Looking for Gutter Cleaning Nearby?
-            </h2>
+              <h2 className="mt-3 font-display text-4xl font-bold text-navy">
+                Looking for Gutter Cleaning Nearby?
+              </h2>
 
-            <p className="mt-4 text-lg text-muted-foreground">
-              We help homeowners compare gutter cleaning quotes across the Greater
-              Toronto Area.
-            </p>
+              <p className="mt-4 text-lg text-muted-foreground">
+                We help homeowners request gutter cleaning quotes across the Greater
+                Toronto Area.
+              </p>
+            </div>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              {[
+                { name: "Toronto", href: "/gutter-cleaning/toronto" },
+                { name: "Mississauga", href: "/gutter-cleaning/mississauga" },
+                { name: "Markham", href: "/gutter-cleaning/markham" },
+              ].map((area) => (
+                <a
+                  key={area.name}
+                  href={area.href}
+                  className="rounded-full border border-border px-6 py-3 font-semibold text-navy transition hover:bg-muted"
+                >
+                  {area.name}
+                </a>
+              ))}
+            </div>
           </div>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a
-              href="/gutter-cleaning-toronto"
-              className="rounded-full border border-border px-6 py-3 hover:bg-muted"
-            >
-              Toronto
-            </a>
-
-            <a
-              href="/gutter-cleaning-mississauga"
-              className="rounded-full border border-border px-6 py-3 hover:bg-muted"
-            >
-              Mississauga
-            </a>
-
-            <a
-              href="/gutter-cleaning-markham"
-              className="rounded-full border border-border px-6 py-3 hover:bg-muted"
-            >
-              Markham
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
 
       <Footer />
     </div>

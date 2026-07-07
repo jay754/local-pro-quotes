@@ -35,7 +35,7 @@ function ServicesPage() {
 
       <section className="py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 xl:grid-cols-3">
             {services.map((s) => {
               const Icon = s.icon;
               return (
@@ -46,7 +46,7 @@ function ServicesPage() {
                     </div>
                     <div>
                       <h2 className="font-display text-2xl font-bold text-navy">{s.name}</h2>
-                      <p className="mt-1 text-muted-foreground">{s.description}</p>
+                      <p className="min-h-[120px] text-muted-foreground">{s.description}</p>
                     </div>
                   </div>
 
@@ -63,11 +63,10 @@ function ServicesPage() {
                   </div>
 
                   <Link
-                    to="/"
-                    hash="quote"
+                    to={s.href}
                     className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-all hover:bg-brand hover:shadow-glow"
                   >
-                    Get Started <ArrowRight className="h-4 w-4" />
+                    Learn More <ArrowRight className="h-4 w-4" />
                   </Link>
                 </article>
               );
@@ -78,10 +77,20 @@ function ServicesPage() {
 
       <section className="bg-navy py-20 text-navy-foreground">
         <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
-          <h2 className="font-display text-4xl font-bold sm:text-5xl">Ready to get started?</h2>
-          <p className="mt-4 text-lg text-white/70">One form. Multiple pros. Free to use.</p>
-          <Link to="/" hash="quote" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-base font-semibold text-navy transition-all hover:bg-brand hover:text-white">
-            Find a Pro <ArrowRight className="h-4 w-4" />
+          <h2 className="font-display text-4xl font-bold sm:text-5xl">
+            Ready to get started?
+          </h2>
+
+          <p className="mt-4 text-lg text-white/70">
+            Choose a service and submit your free quote request.
+          </p>
+
+          <Link
+            to="/"
+            hash="quote"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-base font-semibold text-navy transition-all hover:bg-brand hover:text-white"
+          >
+            Request a Quote <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
