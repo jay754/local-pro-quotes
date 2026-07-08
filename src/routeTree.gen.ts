@@ -14,10 +14,14 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PressureWashingIndexRouteImport } from './routes/pressure-washing/index'
+import { Route as JunkRemovalIndexRouteImport } from './routes/junk-removal/index'
 import { Route as GutterCleaningIndexRouteImport } from './routes/gutter-cleaning/index'
 import { Route as PressureWashingTorontoRouteImport } from './routes/pressure-washing/toronto'
 import { Route as PressureWashingMississaugaRouteImport } from './routes/pressure-washing/mississauga'
 import { Route as PressureWashingMarkhamRouteImport } from './routes/pressure-washing/markham'
+import { Route as JunkRemovalTorontoRouteImport } from './routes/junk-removal/toronto'
+import { Route as JunkRemovalMississaugaRouteImport } from './routes/junk-removal/mississauga'
+import { Route as JunkRemovalMarkhamRouteImport } from './routes/junk-removal/markham'
 import { Route as GutterCleaningTorontoRouteImport } from './routes/gutter-cleaning/toronto'
 import { Route as GutterCleaningMississaugaRouteImport } from './routes/gutter-cleaning/mississauga'
 import { Route as GutterCleaningMarkhamRouteImport } from './routes/gutter-cleaning/markham'
@@ -47,6 +51,11 @@ const PressureWashingIndexRoute = PressureWashingIndexRouteImport.update({
   path: '/pressure-washing/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JunkRemovalIndexRoute = JunkRemovalIndexRouteImport.update({
+  id: '/junk-removal/',
+  path: '/junk-removal/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GutterCleaningIndexRoute = GutterCleaningIndexRouteImport.update({
   id: '/gutter-cleaning/',
   path: '/gutter-cleaning/',
@@ -66,6 +75,21 @@ const PressureWashingMississaugaRoute =
 const PressureWashingMarkhamRoute = PressureWashingMarkhamRouteImport.update({
   id: '/pressure-washing/markham',
   path: '/pressure-washing/markham',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JunkRemovalTorontoRoute = JunkRemovalTorontoRouteImport.update({
+  id: '/junk-removal/toronto',
+  path: '/junk-removal/toronto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JunkRemovalMississaugaRoute = JunkRemovalMississaugaRouteImport.update({
+  id: '/junk-removal/mississauga',
+  path: '/junk-removal/mississauga',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JunkRemovalMarkhamRoute = JunkRemovalMarkhamRouteImport.update({
+  id: '/junk-removal/markham',
+  path: '/junk-removal/markham',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GutterCleaningTorontoRoute = GutterCleaningTorontoRouteImport.update({
@@ -93,10 +117,14 @@ export interface FileRoutesByFullPath {
   '/gutter-cleaning/markham': typeof GutterCleaningMarkhamRoute
   '/gutter-cleaning/mississauga': typeof GutterCleaningMississaugaRoute
   '/gutter-cleaning/toronto': typeof GutterCleaningTorontoRoute
+  '/junk-removal/markham': typeof JunkRemovalMarkhamRoute
+  '/junk-removal/mississauga': typeof JunkRemovalMississaugaRoute
+  '/junk-removal/toronto': typeof JunkRemovalTorontoRoute
   '/pressure-washing/markham': typeof PressureWashingMarkhamRoute
   '/pressure-washing/mississauga': typeof PressureWashingMississaugaRoute
   '/pressure-washing/toronto': typeof PressureWashingTorontoRoute
   '/gutter-cleaning/': typeof GutterCleaningIndexRoute
+  '/junk-removal/': typeof JunkRemovalIndexRoute
   '/pressure-washing/': typeof PressureWashingIndexRoute
 }
 export interface FileRoutesByTo {
@@ -107,10 +135,14 @@ export interface FileRoutesByTo {
   '/gutter-cleaning/markham': typeof GutterCleaningMarkhamRoute
   '/gutter-cleaning/mississauga': typeof GutterCleaningMississaugaRoute
   '/gutter-cleaning/toronto': typeof GutterCleaningTorontoRoute
+  '/junk-removal/markham': typeof JunkRemovalMarkhamRoute
+  '/junk-removal/mississauga': typeof JunkRemovalMississaugaRoute
+  '/junk-removal/toronto': typeof JunkRemovalTorontoRoute
   '/pressure-washing/markham': typeof PressureWashingMarkhamRoute
   '/pressure-washing/mississauga': typeof PressureWashingMississaugaRoute
   '/pressure-washing/toronto': typeof PressureWashingTorontoRoute
   '/gutter-cleaning': typeof GutterCleaningIndexRoute
+  '/junk-removal': typeof JunkRemovalIndexRoute
   '/pressure-washing': typeof PressureWashingIndexRoute
 }
 export interface FileRoutesById {
@@ -122,10 +154,14 @@ export interface FileRoutesById {
   '/gutter-cleaning/markham': typeof GutterCleaningMarkhamRoute
   '/gutter-cleaning/mississauga': typeof GutterCleaningMississaugaRoute
   '/gutter-cleaning/toronto': typeof GutterCleaningTorontoRoute
+  '/junk-removal/markham': typeof JunkRemovalMarkhamRoute
+  '/junk-removal/mississauga': typeof JunkRemovalMississaugaRoute
+  '/junk-removal/toronto': typeof JunkRemovalTorontoRoute
   '/pressure-washing/markham': typeof PressureWashingMarkhamRoute
   '/pressure-washing/mississauga': typeof PressureWashingMississaugaRoute
   '/pressure-washing/toronto': typeof PressureWashingTorontoRoute
   '/gutter-cleaning/': typeof GutterCleaningIndexRoute
+  '/junk-removal/': typeof JunkRemovalIndexRoute
   '/pressure-washing/': typeof PressureWashingIndexRoute
 }
 export interface FileRouteTypes {
@@ -138,10 +174,14 @@ export interface FileRouteTypes {
     | '/gutter-cleaning/markham'
     | '/gutter-cleaning/mississauga'
     | '/gutter-cleaning/toronto'
+    | '/junk-removal/markham'
+    | '/junk-removal/mississauga'
+    | '/junk-removal/toronto'
     | '/pressure-washing/markham'
     | '/pressure-washing/mississauga'
     | '/pressure-washing/toronto'
     | '/gutter-cleaning/'
+    | '/junk-removal/'
     | '/pressure-washing/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -152,10 +192,14 @@ export interface FileRouteTypes {
     | '/gutter-cleaning/markham'
     | '/gutter-cleaning/mississauga'
     | '/gutter-cleaning/toronto'
+    | '/junk-removal/markham'
+    | '/junk-removal/mississauga'
+    | '/junk-removal/toronto'
     | '/pressure-washing/markham'
     | '/pressure-washing/mississauga'
     | '/pressure-washing/toronto'
     | '/gutter-cleaning'
+    | '/junk-removal'
     | '/pressure-washing'
   id:
     | '__root__'
@@ -166,10 +210,14 @@ export interface FileRouteTypes {
     | '/gutter-cleaning/markham'
     | '/gutter-cleaning/mississauga'
     | '/gutter-cleaning/toronto'
+    | '/junk-removal/markham'
+    | '/junk-removal/mississauga'
+    | '/junk-removal/toronto'
     | '/pressure-washing/markham'
     | '/pressure-washing/mississauga'
     | '/pressure-washing/toronto'
     | '/gutter-cleaning/'
+    | '/junk-removal/'
     | '/pressure-washing/'
   fileRoutesById: FileRoutesById
 }
@@ -181,10 +229,14 @@ export interface RootRouteChildren {
   GutterCleaningMarkhamRoute: typeof GutterCleaningMarkhamRoute
   GutterCleaningMississaugaRoute: typeof GutterCleaningMississaugaRoute
   GutterCleaningTorontoRoute: typeof GutterCleaningTorontoRoute
+  JunkRemovalMarkhamRoute: typeof JunkRemovalMarkhamRoute
+  JunkRemovalMississaugaRoute: typeof JunkRemovalMississaugaRoute
+  JunkRemovalTorontoRoute: typeof JunkRemovalTorontoRoute
   PressureWashingMarkhamRoute: typeof PressureWashingMarkhamRoute
   PressureWashingMississaugaRoute: typeof PressureWashingMississaugaRoute
   PressureWashingTorontoRoute: typeof PressureWashingTorontoRoute
   GutterCleaningIndexRoute: typeof GutterCleaningIndexRoute
+  JunkRemovalIndexRoute: typeof JunkRemovalIndexRoute
   PressureWashingIndexRoute: typeof PressureWashingIndexRoute
 }
 
@@ -225,6 +277,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PressureWashingIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/junk-removal/': {
+      id: '/junk-removal/'
+      path: '/junk-removal'
+      fullPath: '/junk-removal/'
+      preLoaderRoute: typeof JunkRemovalIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gutter-cleaning/': {
       id: '/gutter-cleaning/'
       path: '/gutter-cleaning'
@@ -251,6 +310,27 @@ declare module '@tanstack/react-router' {
       path: '/pressure-washing/markham'
       fullPath: '/pressure-washing/markham'
       preLoaderRoute: typeof PressureWashingMarkhamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/junk-removal/toronto': {
+      id: '/junk-removal/toronto'
+      path: '/junk-removal/toronto'
+      fullPath: '/junk-removal/toronto'
+      preLoaderRoute: typeof JunkRemovalTorontoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/junk-removal/mississauga': {
+      id: '/junk-removal/mississauga'
+      path: '/junk-removal/mississauga'
+      fullPath: '/junk-removal/mississauga'
+      preLoaderRoute: typeof JunkRemovalMississaugaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/junk-removal/markham': {
+      id: '/junk-removal/markham'
+      path: '/junk-removal/markham'
+      fullPath: '/junk-removal/markham'
+      preLoaderRoute: typeof JunkRemovalMarkhamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gutter-cleaning/toronto': {
@@ -285,10 +365,14 @@ const rootRouteChildren: RootRouteChildren = {
   GutterCleaningMarkhamRoute: GutterCleaningMarkhamRoute,
   GutterCleaningMississaugaRoute: GutterCleaningMississaugaRoute,
   GutterCleaningTorontoRoute: GutterCleaningTorontoRoute,
+  JunkRemovalMarkhamRoute: JunkRemovalMarkhamRoute,
+  JunkRemovalMississaugaRoute: JunkRemovalMississaugaRoute,
+  JunkRemovalTorontoRoute: JunkRemovalTorontoRoute,
   PressureWashingMarkhamRoute: PressureWashingMarkhamRoute,
   PressureWashingMississaugaRoute: PressureWashingMississaugaRoute,
   PressureWashingTorontoRoute: PressureWashingTorontoRoute,
   GutterCleaningIndexRoute: GutterCleaningIndexRoute,
+  JunkRemovalIndexRoute: JunkRemovalIndexRoute,
   PressureWashingIndexRoute: PressureWashingIndexRoute,
 }
 export const routeTree = rootRouteImport

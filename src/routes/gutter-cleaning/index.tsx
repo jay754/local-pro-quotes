@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { QuoteForm } from "@/components/QuoteForm";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/gutter-cleaning/")({
   component: GutterCleaningPage,
@@ -279,28 +280,7 @@ function GutterCleaningPage() {
         </div>
       </section>
 
-      {/* CTA */}
-
-      <section className="bg-navy py-20 text-center text-white">
-        <div className="mx-auto w-[92%] max-w-3xl">
-
-          <h2 className="mb-4 text-4xl font-black">
-            Ready to clean your gutters?
-          </h2>
-
-          <p className="mb-8 text-sky-100">
-            Submit your gutter cleaning quote request and get started today.
-          </p>
-
-          <a
-            href="#quote"
-            className="rounded-full bg-brand px-6 py-3 font-black text-white"
-          >
-            Request a Free Quote
-          </a>
-
-        </div>
-      </section>
+      <Footer />
 
     </main>
   );

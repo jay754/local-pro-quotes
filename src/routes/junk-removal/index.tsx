@@ -2,15 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Footer } from "@/components/Footer";
 
-export const Route = createFileRoute("/pressure-washing/")({
-  component: PressureWashingPage,
+export const Route = createFileRoute("/junk-removal/")({
+  component: JunkRemovalPage,
 });
 
-function PressureWashingPage() {
+function JunkRemovalPage() {
   const serviceAreas = [
-    { name: "Toronto", href: "/pressure-washing/toronto" },
-    { name: "Mississauga", href: "/pressure-washing/mississauga" },
-    { name: "Markham", href: "/pressure-washing/markham" },
+    { name: "Toronto", href: "/junk-removal/toronto" },
+    { name: "Mississauga", href: "/junk-removal/mississauga" },
+    { name: "Markham", href: "/junk-removal/markham" },
   ];
 
   return (
@@ -19,16 +19,16 @@ function PressureWashingPage() {
         <div className="mx-auto grid w-[92%] max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-sky-200">
-              Pressure Washing Services
+              Junk Removal Services
             </p>
 
             <h1 className="mb-6 text-4xl font-black leading-tight md:text-6xl">
-              Refresh your property with professional pressure washing.
+              Junk removal services for homes, garages, basements, and businesses.
             </h1>
 
             <p className="mb-8 max-w-2xl text-lg leading-8 text-sky-100">
-              Request pressure washing quotes for driveways, patios, walkways,
-              decks, siding, storefronts, and other exterior surfaces.
+              Request junk removal quotes for furniture, appliances, renovation
+              debris, yard waste, garage cleanouts, and commercial junk removal.
             </p>
 
             <a
@@ -41,16 +41,17 @@ function PressureWashingPage() {
 
           <div id="quote">
             <QuoteForm
-              defaultService="pressure-washing"
-              title="Get a Pressure Washing Quote"
-              description="Tell us what needs cleaning and submit your request online."
+              defaultService="junk-removal"
+              title="Get a Junk Removal Quote"
+              description="Tell us what needs to be removed and submit your request online."
               projectTypes={[
-                "Driveway",
-                "Patio",
-                "Deck",
-                "Siding / exterior walls",
-                "Walkway",
-                "Commercial property",
+                "Furniture Removal",
+                "Appliance Removal",
+                "Garage Cleanout",
+                "Basement Cleanout",
+                "Yard Waste",
+                "Renovation Debris",
+                "Commercial Junk Removal",
                 "Other",
               ]}
             />
@@ -61,17 +62,17 @@ function PressureWashingPage() {
       <section className="bg-white py-24">
         <div className="mx-auto w-[92%] max-w-6xl text-center">
           <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-brand">
-            Why Pressure Washing Matters
+            Why Junk Removal
           </p>
 
           <h2 className="mx-auto mb-5 max-w-3xl text-4xl font-black text-navy md:text-5xl">
-            Remove buildup before it makes your property look tired.
+            Clear out unwanted items without doing the heavy lifting.
           </h2>
 
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-            Dirt, algae, salt, grime, mildew, and weather stains can build up on
-            outdoor surfaces. Pressure washing helps improve curb appeal and keeps
-            exterior areas looking cleaner.
+            Junk removal helps homeowners and businesses clear space quickly,
+            whether it is old furniture, appliances, household clutter, yard
+            waste, or renovation debris.
           </p>
         </div>
       </section>
@@ -79,21 +80,21 @@ function PressureWashingPage() {
       <section id="services" className="bg-surface py-24">
         <div className="mx-auto w-[92%] max-w-6xl">
           <p className="mb-3 text-sm font-black uppercase tracking-[0.25em] text-brand">
-            Pressure Washing Services
+            Junk Removal Services
           </p>
 
           <h2 className="mb-10 max-w-3xl text-4xl font-black text-navy md:text-5xl">
-            Request quotes for common exterior cleaning jobs.
+            Request quotes for common junk removal jobs.
           </h2>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
-              ["🚗", "Driveway Pressure Washing", "Clean dirt, salt stains, tire marks, and surface buildup from driveways."],
-              ["🧱", "Walkways & Steps", "Refresh paths, steps, entrances, and high-traffic exterior areas."],
-              ["🌿", "Patio Cleaning", "Clean stone, brick, concrete, and backyard patio surfaces."],
-              ["🪵", "Deck Cleaning", "Help remove grime and weather buildup from wood or composite decks."],
-              ["🏠", "Siding & House Washing", "Request exterior washing for siding, garage doors, and walls."],
-              ["🏢", "Commercial Pressure Washing", "Submit requests for storefronts, sidewalks, plazas, and parking areas."],
+              ["🛋️", "Furniture Removal", "Remove old couches, mattresses, tables, chairs, cabinets, and other bulky furniture."],
+              ["📦", "Appliance Removal", "Request pickup for fridges, washers, dryers, stoves, dishwashers, and other appliances."],
+              ["🏠", "Garage & Basement Cleanouts", "Clear clutter from garages, basements, storage rooms, and utility spaces."],
+              ["🧱", "Renovation Debris", "Remove leftover construction materials, drywall, wood, flooring, and project debris."],
+              ["🌿", "Yard Waste Removal", "Get help removing branches, leaves, soil, outdoor debris, and seasonal yard waste."],
+              ["🏢", "Commercial Junk Removal", "Request junk removal for offices, retail spaces, storage areas, and commercial properties."],
             ].map(([icon, title, description]) => (
               <div
                 key={title}
@@ -116,33 +117,31 @@ function PressureWashingPage() {
             </p>
 
             <h2 className="mb-5 text-4xl font-black text-navy md:text-5xl">
-              Pressure washing in the GTA and surrounding areas.
+              Junk removal in the GTA.
             </h2>
 
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-              Submit a quote request for pressure washing services in your area.
+              Submit a quote request for junk removal services in your area.
             </p>
           </div>
 
           <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
-          {serviceAreas.map((city) => (
-            <a
-              key={city.name}
-              href={city.href}
-              className="group rounded-3xl border bg-white p-8 text-center shadow-card transition hover:-translate-y-1 hover:shadow-lift"
-            >
-              <h3 className="text-2xl font-black text-navy">{city.name}</h3>
+            {serviceAreas.map((city) => (
+              <a
+                key={city.name}
+                href={city.href}
+                className="group rounded-3xl border bg-white p-8 text-center shadow-card transition hover:-translate-y-1 hover:shadow-lift"
+              >
+                <h3 className="text-2xl font-black text-navy">{city.name}</h3>
 
-              <p className="mt-2 text-muted-foreground">
-                Pressure Washing
-              </p>
+                <p className="mt-2 text-muted-foreground">Junk Removal</p>
 
-              <span className="mt-6 inline-flex items-center justify-center font-black text-brand transition group-hover:gap-2">
-                View Service →
-              </span>
-            </a>
-          ))}
-        </div>
+                <span className="mt-6 inline-flex items-center justify-center font-black text-brand transition group-hover:gap-2">
+                  View Service →
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -154,31 +153,31 @@ function PressureWashingPage() {
             </p>
 
             <h2 className="text-4xl font-black text-navy md:text-5xl">
-              Pressure Washing FAQs
+              Junk Removal FAQs
             </h2>
           </div>
 
           <div className="space-y-5">
             {[
               {
-                question: "How much does pressure washing cost?",
+                question: "How much does junk removal cost?",
                 answer:
-                  "Pricing depends on the size of the area, surface type, condition, access, and whether the job is residential or commercial.",
+                  "Pricing depends on the type of junk, volume, weight, access, disposal requirements, and whether the job is residential or commercial.",
               },
               {
-                question: "What surfaces can be pressure washed?",
+                question: "What items can be removed?",
                 answer:
-                  "Common surfaces include driveways, patios, walkways, decks, siding, fences, garage floors, storefronts, and commercial exterior areas.",
+                  "Common items include furniture, appliances, mattresses, boxes, yard waste, renovation debris, garage clutter, and office junk.",
               },
               {
-                question: "Is pressure washing safe for every surface?",
+                question: "Do I need to move items outside?",
                 answer:
-                  "Not always. Some surfaces need lower pressure or soft washing depending on the material and condition.",
+                  "In many cases, junk removal providers can remove items from inside the home, garage, basement, or business location.",
               },
               {
-                question: "Do I need to be home?",
+                question: "Do you handle commercial junk removal?",
                 answer:
-                  "In many cases, you may not need to be home if there is access to the area being cleaned and any required water source.",
+                  "Yes. You can request quotes for offices, retail spaces, storage rooms, warehouses, and other commercial properties.",
               },
             ].map((faq) => (
               <details
@@ -188,6 +187,7 @@ function PressureWashingPage() {
                 <summary className="cursor-pointer text-lg font-black text-navy">
                   {faq.question}
                 </summary>
+
                 <p className="mt-4 leading-7 text-muted-foreground">
                   {faq.answer}
                 </p>

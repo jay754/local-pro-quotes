@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { QuoteForm } from "@/components/QuoteForm";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/pressure-washing/markham")({
   component: MarkhamPressureWashingPage,
@@ -332,6 +333,8 @@ function MarkhamPressureWashingPage() {
 
         </div>
         </section>
+
+        <Footer />
     </main>
   );
 }
