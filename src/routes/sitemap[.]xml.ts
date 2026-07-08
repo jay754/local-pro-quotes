@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
 const BASE_URL = "https://gethomequotes.ca";
-const LAST_MODIFIED = "2026-07-02";
+const LAST_MODIFIED = "2026-07-08";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -12,22 +12,20 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/services", changefreq: "monthly", priority: "0.8" },
 
-          // Gutter Cleaning
-          {
-            path: "/gutter-cleaning-toronto",
-            changefreq: "weekly",
-            priority: "0.9",
-          },
-          {
-            path: "/gutter-cleaning-mississauga",
-            changefreq: "weekly",
-            priority: "0.9",
-          },
-          {
-            path: "/gutter-cleaning-markham",
-            changefreq: "weekly",
-            priority: "0.9",
-          },
+          { path: "/gutter-cleaning", changefreq: "weekly", priority: "0.9" },
+          { path: "/gutter-cleaning/toronto", changefreq: "weekly", priority: "0.85" },
+          { path: "/gutter-cleaning/mississauga", changefreq: "weekly", priority: "0.85" },
+          { path: "/gutter-cleaning/markham", changefreq: "weekly", priority: "0.85" },
+
+          { path: "/pressure-washing", changefreq: "weekly", priority: "0.9" },
+          { path: "/pressure-washing/toronto", changefreq: "weekly", priority: "0.85" },
+          { path: "/pressure-washing/mississauga", changefreq: "weekly", priority: "0.85" },
+          { path: "/pressure-washing/markham", changefreq: "weekly", priority: "0.85" },
+
+          { path: "/junk-removal", changefreq: "weekly", priority: "0.9" },
+          { path: "/junk-removal/toronto", changefreq: "weekly", priority: "0.85" },
+          { path: "/junk-removal/mississauga", changefreq: "weekly", priority: "0.85" },
+          { path: "/junk-removal/markham", changefreq: "weekly", priority: "0.85" },
         ];
 
         const urls = entries

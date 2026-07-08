@@ -241,7 +241,7 @@ function GutterCleaningMississaugaPage() {
               </h3>
 
               <p className="mt-2 text-muted-foreground">
-                Most mississauga homes benefit from gutter cleaning at least twice per
+                Most Mississauga homes benefit from gutter cleaning at least twice per
                 year, typically in the spring and fall.
               </p>
             </div>
@@ -290,7 +290,7 @@ function GutterCleaningMississaugaPage() {
               {[
                 "Takes under 60 seconds",
                 "Compare local providers",
-                "Serving mississauga and nearby GTA areas",
+                "Serving Mississauga and nearby GTA areas",
               ].map((t) => (
                 <li key={t} className="flex items-center gap-3 text-navy">
                   <span className="grid h-6 w-6 place-items-center rounded-full bg-brand/10 text-brand">

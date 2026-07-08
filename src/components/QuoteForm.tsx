@@ -21,14 +21,15 @@ export function QuoteForm({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [formData, setFormData] = useState({
-    service: defaultService ?? "",
-    name: "",
-    email: "",
-    phone: "",
-    postalCode: "",
-    description: "",
-  });
+const [formData, setFormData] = useState({
+  service: defaultService ?? "",
+  projectType: "",
+  name: "",
+  email: "",
+  phone: "",
+  postalCode: "",
+  description: "",
+});
 
   const sendQuote = useServerFn(submitQuote);
 
@@ -120,8 +121,8 @@ export function QuoteForm({
           <Field label="What needs service?" full>
             <select
               required
-              name="description"
-              value={formData.description}
+              name="projectType"
+              value={formData.projectType}
               onChange={handleChange}
               className="input"
             >

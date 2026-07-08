@@ -3,6 +3,27 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/pressure-washing/")({
+  head: () => ({
+    meta: [
+      {
+        title: "Pressure Washing Services | Get Free Quotes | Get Home Quotes",
+      },
+      {
+        name: "description",
+        content:
+          "Compare free pressure washing quotes for driveways, patios, decks, siding, walkways, and commercial properties.",
+      },
+      {
+        property: "og:title",
+        content: "Pressure Washing Services | Get Free Quotes",
+      },
+      {
+        property: "og:description",
+        content:
+          "Request pressure washing quotes for driveways, patios, decks, siding, walkways, and commercial properties.",
+      },
+    ],
+  }),
   component: PressureWashingPage,
 });
 

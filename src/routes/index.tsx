@@ -17,16 +17,23 @@ import { services } from "@/lib/services";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Get Home Quotes — Find Trusted Local Pros" },
+      {
+        title:
+          "Get Home Quotes | Local Home Service Quotes in Toronto, Mississauga & Markham",
+      },
       {
         name: "description",
         content:
-          "Tell us what you need and request quotes for gutter cleaning, pressure washing, junk removal and more.",
+          "Request free quotes for gutter cleaning, pressure washing, and junk removal in Toronto, Mississauga, and Markham.",
       },
-      { property: "og:title", content: "Get Home Quotes — Find Trusted Local Pros" },
+      {
+        property: "og:title",
+        content: "Get Home Quotes | Local Home Service Quotes",
+      },
       {
         property: "og:description",
-        content: "Request quotes for local home services.",
+        content:
+          "Request free quotes for gutter cleaning, pressure washing, and junk removal across Toronto, Mississauga, and Markham.",
       },
     ],
   }),

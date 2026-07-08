@@ -237,7 +237,7 @@ function GutterCleaningMarkhamPage() {
               </h3>
 
               <p className="mt-2 text-muted-foreground">
-                Most  homes benefit from gutter cleaning at least twice per
+                Most Markham homes benefit from gutter cleaning at least twice per
                 year, typically in the spring and fall.
               </p>
             </div>
@@ -275,7 +275,7 @@ function GutterCleaningMarkhamPage() {
               Find your pro
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold text-navy sm:text-5xl">
-              Get Free Gutter Cleaning Quotes
+              Get Free Markham Gutter Cleaning Quotes
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Fill out the form and we’ll match your request with local gutter

@@ -3,6 +3,27 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/gutter-cleaning/")({
+  head: () => ({
+    meta: [
+      {
+        title: "Gutter Cleaning Services | Get Free Quotes | Get Home Quotes",
+      },
+      {
+        name: "description",
+        content:
+          "Compare free gutter cleaning quotes for homes, townhouses, downspouts, gutter inspections, and commercial properties.",
+      },
+      {
+        property: "og:title",
+        content: "Gutter Cleaning Services | Get Free Quotes",
+      },
+      {
+        property: "og:description",
+        content:
+          "Request gutter cleaning quotes for homes, downspouts, gutter inspections, and commercial properties.",
+      },
+    ],
+  }),
   component: GutterCleaningPage,
 });
 

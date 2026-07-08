@@ -3,6 +3,28 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/pressure-washing/markham")({
+  head: () => ({
+    meta: [
+      {
+        title:
+          "Pressure Washing Markham | Get Free Quotes | Get Home Quotes",
+      },
+      {
+        name: "description",
+        content:
+          "Compare free pressure washing quotes in Markham for driveways, patios, decks, siding, walkways, and commercial properties.",
+      },
+      {
+        property: "og:title",
+        content: "Pressure Washing Markham | Get Free Quotes",
+      },
+      {
+        property: "og:description",
+        content:
+          "Request pressure washing quotes in Markham from local professionals.",
+      },
+    ],
+  }),
   component: MarkhamPressureWashingPage,
 });
 

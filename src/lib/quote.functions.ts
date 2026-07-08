@@ -4,6 +4,7 @@ import { Resend } from "resend";
 
 const quoteSchema = z.object({
   service: z.string().min(1, "Service is required"),
+  projectType: z.string().optional(),
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
   phone: z.string().min(1, "Phone is required"),

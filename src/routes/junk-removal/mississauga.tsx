@@ -3,6 +3,27 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/junk-removal/mississauga")({
+  head: () => ({
+    meta: [
+      {
+        title: "Junk Removal Mississauga | Get Free Quotes | Get Home Quotes",
+      },
+      {
+        name: "description",
+        content:
+          "Compare free junk removal quotes in Mississauga for furniture removal, appliances, garage cleanouts, renovation debris, yard waste, and commercial junk removal.",
+      },
+      {
+        property: "og:title",
+        content: "Junk Removal Mississauga | Get Free Quotes",
+      },
+      {
+        property: "og:description",
+        content:
+          "Request junk removal quotes in Mississauga from local professionals.",
+      },
+    ],
+  }),
   component: MississaugaJunkRemovalPage,
 });
 

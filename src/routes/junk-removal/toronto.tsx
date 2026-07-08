@@ -3,6 +3,27 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/junk-removal/toronto")({
+  head: () => ({
+    meta: [
+      {
+        title: "Junk Removal Toronto | Get Free Quotes | Get Home Quotes",
+      },
+      {
+        name: "description",
+        content:
+          "Compare free junk removal quotes in Toronto for furniture removal, appliances, garage cleanouts, renovation debris, yard waste, and commercial junk removal.",
+      },
+      {
+        property: "og:title",
+        content: "Junk Removal Toronto | Get Free Quotes",
+      },
+      {
+        property: "og:description",
+        content:
+          "Request junk removal quotes in Toronto from local professionals.",
+      },
+    ],
+  }),
   component: TorontoJunkRemovalPage,
 });
 

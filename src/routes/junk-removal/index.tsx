@@ -3,6 +3,27 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/junk-removal/")({
+  head: () => ({
+    meta: [
+      {
+        title: "Junk Removal Services | Get Free Quotes | Get Home Quotes",
+      },
+      {
+        name: "description",
+        content:
+          "Compare free junk removal quotes for furniture, appliances, garage cleanouts, renovation debris, yard waste, and commercial junk removal.",
+      },
+      {
+        property: "og:title",
+        content: "Junk Removal Services | Get Free Quotes",
+      },
+      {
+        property: "og:description",
+        content:
+          "Request junk removal quotes for furniture, appliances, cleanouts, renovation debris, yard waste, and commercial properties.",
+      },
+    ],
+  }),
   component: JunkRemovalPage,
 });
 

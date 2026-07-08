@@ -3,6 +3,28 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/pressure-washing/mississauga")({
+  head: () => ({
+    meta: [
+      {
+        title:
+          "Pressure Washing Mississauga | Get Free Quotes | Get Home Quotes",
+      },
+      {
+        name: "description",
+        content:
+          "Compare free pressure washing quotes in Mississauga for driveways, patios, decks, siding, walkways, and commercial properties.",
+      },
+      {
+        property: "og:title",
+        content: "Pressure Washing Mississauga | Get Free Quotes",
+      },
+      {
+        property: "og:description",
+        content:
+          "Request pressure washing quotes in Mississauga from local professionals.",
+      },
+    ],
+  }),
   component: MississaugaPressureWashingPage,
 });
 
