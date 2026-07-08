@@ -36,5 +36,6 @@ export const services: Service[] = [
     description: "Furniture, appliances, yard waste, renovation debris — pros handle the heavy lifting and disposal.",
     problems: ["Old furniture to remove", "Garage or basement cleanout", "Post-renovation debris"],
     icon: Trash2,
+    href: "/junk-removal",
   },
 ];
