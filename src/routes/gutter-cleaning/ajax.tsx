@@ -2,11 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
   Check,
-  Clock,
   ShieldCheck,
-  DollarSign,
-  Zap,
-  FileText,
   Droplets,
   Home,
   Leaf,
@@ -15,32 +11,32 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 
-export const Route = createFileRoute("/gutter-cleaning/mississauga")({
+export const Route = createFileRoute("/gutter-cleaning/ajax")({
   head: () => ({
     meta: [
       {
-        title: "Gutter Cleaning Mississauga | Compare Local Gutter Cleaning Quotes",
+        title: "Gutter Cleaning Ajax | Compare Local Gutter Cleaning Quotes",
       },
       {
         name: "description",
         content:
-          "Looking for gutter cleaning in Mississauga? Compare quotes from local gutter cleaning companies serving Mississauga and nearby GTA communities.",
+          "Looking for gutter cleaning in Ajax? Compare quotes from local gutter cleaning companies serving Ajax and nearby Durham region communities."
       },
       {
         property: "og:title",
-        content: "Gutter Cleaning Mississauga | Get Free Quotes",
+        content: "Gutter Cleaning Ajax | Get Free Quotes",
       },
       {
         property: "og:description",
         content:
-         "Find local gutter cleaning professionals in Mississauga and compare free quotes.",
+          "Find local gutter cleaning professionals in Ajax and compare free quotes.",
       },
     ],
   }),
-  component: GutterCleaningMississaugaPage,
+  component: GutterCleaningAjaxPage,
 });
 
-function GutterCleaningMississaugaPage() {
+function GutterCleaningAjaxPage() {
   return (
     <div className="min-h-screen bg-background">
       <Nav />
@@ -56,11 +52,11 @@ function GutterCleaningMississaugaPage() {
             </span>
 
             <h1 className="mt-5 font-display text-5xl font-bold tracking-tight text-navy sm:text-6xl lg:text-7xl">
-              Gutter Cleaning <span className="text-brand">Mississauga</span>
+              Gutter Cleaning <span className="text-brand">Ajax</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              Compare quotes from trusted local gutter cleaning professionals serving Mississauga and nearby communities.
+              Compare quotes from trusted local gutter cleaning professionals serving Ajax and surrounding Durham neighbourhoods.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -81,7 +77,7 @@ function GutterCleaningMississaugaPage() {
 
             <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-brand" /> Local Mississauga pros
+                <Check className="h-4 w-4 text-brand" /> Local Ajax pros
               </div>
               <div className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 text-brand" /> Fast responses
@@ -91,9 +87,9 @@ function GutterCleaningMississaugaPage() {
 
           <div className="relative">
             <div className="relative overflow-hidden rounded-3xl shadow-lift">
-              <img
-                src="/images/gutter-cleaning-mississauga-hero.png"
-                alt="Professional gutter cleaning service in Mississauga"
+              <img 
+                src="/images/gutter-cleaning-ajax-hero.png"
+                alt="Professional gutter cleaning service in Ajax"
                 width={1280}
                 height={1280}
                 className="aspect-square w-full object-cover sm:aspect-[4/5]"
@@ -103,28 +99,23 @@ function GutterCleaningMississaugaPage() {
         </div>
       </section>
 
-      {/* MISSISSAUGA CONTENT */}
+      {/* Ajax CONTENT */}
       <section className="bg-background py-20">
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-wider text-brand">
-            Mississauga Gutter Cleaning
+            Ajax Gutter Cleaning
           </p>
 
           <h2 className="mt-3 font-display text-4xl font-bold text-navy">
-            Gutter Cleaning Mississauga: Protect Your Home Year-Round
+            Gutter Cleaning Ajax Protect Your Home Year-Round
           </h2>
 
           <p className="mt-6 text-lg text-muted-foreground">
-            Mississauga homeowners deal with heavy autumn leaf buildup, spring
-            runoff, and seasonal storms that can quickly clog gutters and
-            downspouts. Regular gutter cleaning helps water flow away from your home
-            and reduces the risk of roof, siding, and foundation damage.
+             Ajax homeowners experience heavy rainfall, mature trees, and seasonal leaf buildup that can quickly clog gutters and downspouts. Regular gutter cleaning helps protect your roof, siding, and foundation by keeping rainwater flowing safely away from your home throughout every season.
           </p>
 
           <p className="mt-4 text-lg text-muted-foreground">
-            Whether you live in Port Credit, Erin Mills, Meadowvale, Cooksville,
-            Churchill Meadows, or Streetsville, keeping your gutters clean is an
-            important part of protecting your property.
+            Whether you live in Pickering Village, South Ajax, Central Ajax, Northeast Ajax, Riverside, Audley North, or Discovery Bay, regular gutter cleaning helps protect your home from seasonal debris and costly water damage throughout the year.
           </p>
         </div>
       </section>
@@ -194,7 +185,7 @@ function GutterCleaningMississaugaPage() {
               Typical pricing
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold text-navy sm:text-5xl">
-              Gutter cleaning cost in Mississauga
+              Gutter cleaning cost in Ajax
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Pricing depends on home size, number of storeys, accessibility,
@@ -237,11 +228,11 @@ function GutterCleaningMississaugaPage() {
           <div className="mt-10 space-y-8">
             <div>
               <h3 className="text-xl font-bold text-navy">
-                How often should gutters be cleaned in Mississauga?
+                How often should gutters be cleaned in Ajax?
               </h3>
 
               <p className="mt-2 text-muted-foreground">
-                Most Mississauga homes benefit from gutter cleaning at least twice per
+                Most Ajax homes benefit from gutter cleaning at least twice per
                 year, typically in the spring and fall.
               </p>
             </div>
@@ -279,18 +270,17 @@ function GutterCleaningMississaugaPage() {
               Find your pro
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold text-navy sm:text-5xl">
-              Get Free Mississauga Gutter Cleaning Quotes
+              Get Free Ajax Gutter Cleaning Quotes
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Fill out the form and we’ll match your request with local gutter
-              cleaning professionals. Free, fast, and no obligation.
+              Fill out the form and we’ll match your request with local gutter cleaning professionals serving Ajax. Free, fast, and no obligation.
             </p>
 
             <ul className="mt-8 space-y-3">
               {[
                 "Takes under 60 seconds",
                 "Compare local providers",
-                "Serving Mississauga and nearby GTA areas",
+                "Serving Ajax and surrounding Durham Region communities",
               ].map((t) => (
                 <li key={t} className="flex items-center gap-3 text-navy">
                   <span className="grid h-6 w-6 place-items-center rounded-full bg-brand/10 text-brand">
@@ -308,53 +298,53 @@ function GutterCleaningMississaugaPage() {
         </div>
       </section>
 
-            {/* AREAS WE SERVE */}
-      <section className="bg-background py-16">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider text-brand">
-              Areas We Serve
-            </p>
+      {/* AREAS WE SERVE */}
+        <section className="bg-background py-16">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-wider text-brand">
+                Areas We Serve
+              </p>
 
-            <h2 className="mt-3 font-display text-4xl font-bold text-navy">
-              Looking for Gutter Cleaning Nearby?
-            </h2>
+              <h2 className="mt-3 font-display text-4xl font-bold text-navy">
+                Looking for Gutter Cleaning Nearby?
+              </h2>
 
-            <p className="mt-4 text-lg text-muted-foreground">
-              We help homeowners request gutter cleaning quotes across the Greater
-              Toronto Area.
-            </p>
+              <p className="mt-4 text-lg text-muted-foreground">
+                We help homeowners request gutter cleaning quotes across the Greater
+                Toronto Area.
+              </p>
+            </div>
+
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              {[
+                { name: "Toronto", href: "/gutter-cleaning/toronto" },
+                { name: "Mississauga", href: "/gutter-cleaning/mississauga" },
+                { name: "Markham", href: "/gutter-cleaning/markham" },
+                { name: "North York", href: "/gutter-cleaning/north-york" },
+                { name: "Scarborough", href: "/gutter-cleaning/scarborough" },
+                { name: "Etobicoke", href: "/gutter-cleaning/etobicoke" },
+                { name: "Vaughan", href: "/gutter-cleaning/vaughan" },
+                { name: "Richmond Hill", href: "/gutter-cleaning/richmond-hill" },
+                { name: "Brampton", href: "/gutter-cleaning/brampton" },
+                { name: "Pickering", href: "/gutter-cleaning/pickering" },
+                { name: "Ajax", href: "/gutter-cleaning/ajax" },
+                { name: "Whitby", href: "/gutter-cleaning/whitby" },
+                { name: "Oshawa", href: "/gutter-cleaning/oshawa" },
+                { name: "Oakville", href: "/gutter-cleaning/oakville" },
+                { name: "Burlington", href: "/gutter-cleaning/burlington" },
+              ].map((area) => (
+                <a
+                  key={area.name}
+                  href={area.href}
+                  className="rounded-full border border-border px-6 py-3 font-semibold text-navy transition hover:bg-muted"
+                >
+                  {area.name}
+                </a>
+              ))}
+            </div>
           </div>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            {[
-              { name: "Toronto", href: "/gutter-cleaning/toronto" },
-              { name: "Mississauga", href: "/gutter-cleaning/mississauga" },
-              { name: "Markham", href: "/gutter-cleaning/markham" },
-              { name: "North York", href: "/gutter-cleaning/north-york" },
-              { name: "Scarborough", href: "/gutter-cleaning/scarborough" },
-              { name: "Etobicoke", href: "/gutter-cleaning/etobicoke" },
-              { name: "Vaughan", href: "/gutter-cleaning/vaughan" },
-              { name: "Richmond Hill", href: "/gutter-cleaning/richmond-hill" },
-              { name: "Brampton", href: "/gutter-cleaning/brampton" },
-              { name: "Pickering", href: "/gutter-cleaning/pickering" },
-              { name: "Ajax", href: "/gutter-cleaning/ajax" },
-              { name: "Whitby", href: "/gutter-cleaning/whitby" },
-              { name: "Oshawa", href: "/gutter-cleaning/oshawa" },
-              { name: "Oakville", href: "/gutter-cleaning/oakville" },
-              { name: "Burlington", href: "/gutter-cleaning/burlington" },  
-            ].map((area) => (
-              <a
-                key={area.name}
-                href={area.href}
-                className="rounded-full border border-border px-6 py-3 font-semibold text-navy transition hover:bg-muted"
-              >
-                {area.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
       <Footer />
     </div>

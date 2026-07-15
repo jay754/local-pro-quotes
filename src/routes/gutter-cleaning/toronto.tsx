@@ -332,6 +332,18 @@ function GutterCleaningTorontoPage() {
                 { name: "Toronto", href: "/gutter-cleaning/toronto" },
                 { name: "Mississauga", href: "/gutter-cleaning/mississauga" },
                 { name: "Markham", href: "/gutter-cleaning/markham" },
+                { name: "North York", href: "/gutter-cleaning/north-york" },
+                { name: "Scarborough", href: "/gutter-cleaning/scarborough" },
+                { name: "Etobicoke", href: "/gutter-cleaning/etobicoke" },
+                { name: "Vaughan", href: "/gutter-cleaning/vaughan" },
+                { name: "Richmond Hill", href: "/gutter-cleaning/richmond-hill" },
+                { name: "Brampton", href: "/gutter-cleaning/brampton" },
+                { name: "Pickering", href: "/gutter-cleaning/pickering" },
+                { name: "Ajax", href: "/gutter-cleaning/ajax" },
+                { name: "Whitby", href: "/gutter-cleaning/whitby" },
+                { name: "Oshawa", href: "/gutter-cleaning/oshawa" },
+                { name: "Oakville", href: "/gutter-cleaning/oakville" },
+                { name: "Burlington", href: "/gutter-cleaning/burlington" },
               ].map((area) => (
                 <a
                   key={area.name}

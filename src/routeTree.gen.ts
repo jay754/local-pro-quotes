@@ -22,9 +22,21 @@ import { Route as PressureWashingMarkhamRouteImport } from './routes/pressure-wa
 import { Route as JunkRemovalTorontoRouteImport } from './routes/junk-removal/toronto'
 import { Route as JunkRemovalMississaugaRouteImport } from './routes/junk-removal/mississauga'
 import { Route as JunkRemovalMarkhamRouteImport } from './routes/junk-removal/markham'
+import { Route as GutterCleaningWhitbyRouteImport } from './routes/gutter-cleaning/whitby'
+import { Route as GutterCleaningVaughanRouteImport } from './routes/gutter-cleaning/vaughan'
 import { Route as GutterCleaningTorontoRouteImport } from './routes/gutter-cleaning/toronto'
+import { Route as GutterCleaningScarboroughRouteImport } from './routes/gutter-cleaning/scarborough'
+import { Route as GutterCleaningRichmondHillRouteImport } from './routes/gutter-cleaning/richmond-hill'
+import { Route as GutterCleaningPickeringRouteImport } from './routes/gutter-cleaning/pickering'
+import { Route as GutterCleaningOshawaRouteImport } from './routes/gutter-cleaning/oshawa'
+import { Route as GutterCleaningOakvilleRouteImport } from './routes/gutter-cleaning/oakville'
+import { Route as GutterCleaningNorthYorkRouteImport } from './routes/gutter-cleaning/north-york'
 import { Route as GutterCleaningMississaugaRouteImport } from './routes/gutter-cleaning/mississauga'
 import { Route as GutterCleaningMarkhamRouteImport } from './routes/gutter-cleaning/markham'
+import { Route as GutterCleaningEtobicokeRouteImport } from './routes/gutter-cleaning/etobicoke'
+import { Route as GutterCleaningBurlingtonRouteImport } from './routes/gutter-cleaning/burlington'
+import { Route as GutterCleaningBramptonRouteImport } from './routes/gutter-cleaning/brampton'
+import { Route as GutterCleaningAjaxRouteImport } from './routes/gutter-cleaning/ajax'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -92,9 +104,51 @@ const JunkRemovalMarkhamRoute = JunkRemovalMarkhamRouteImport.update({
   path: '/junk-removal/markham',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GutterCleaningWhitbyRoute = GutterCleaningWhitbyRouteImport.update({
+  id: '/gutter-cleaning/whitby',
+  path: '/gutter-cleaning/whitby',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GutterCleaningVaughanRoute = GutterCleaningVaughanRouteImport.update({
+  id: '/gutter-cleaning/vaughan',
+  path: '/gutter-cleaning/vaughan',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GutterCleaningTorontoRoute = GutterCleaningTorontoRouteImport.update({
   id: '/gutter-cleaning/toronto',
   path: '/gutter-cleaning/toronto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GutterCleaningScarboroughRoute =
+  GutterCleaningScarboroughRouteImport.update({
+    id: '/gutter-cleaning/scarborough',
+    path: '/gutter-cleaning/scarborough',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GutterCleaningRichmondHillRoute =
+  GutterCleaningRichmondHillRouteImport.update({
+    id: '/gutter-cleaning/richmond-hill',
+    path: '/gutter-cleaning/richmond-hill',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GutterCleaningPickeringRoute = GutterCleaningPickeringRouteImport.update({
+  id: '/gutter-cleaning/pickering',
+  path: '/gutter-cleaning/pickering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GutterCleaningOshawaRoute = GutterCleaningOshawaRouteImport.update({
+  id: '/gutter-cleaning/oshawa',
+  path: '/gutter-cleaning/oshawa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GutterCleaningOakvilleRoute = GutterCleaningOakvilleRouteImport.update({
+  id: '/gutter-cleaning/oakville',
+  path: '/gutter-cleaning/oakville',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GutterCleaningNorthYorkRoute = GutterCleaningNorthYorkRouteImport.update({
+  id: '/gutter-cleaning/north-york',
+  path: '/gutter-cleaning/north-york',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GutterCleaningMississaugaRoute =
@@ -108,15 +162,48 @@ const GutterCleaningMarkhamRoute = GutterCleaningMarkhamRouteImport.update({
   path: '/gutter-cleaning/markham',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GutterCleaningEtobicokeRoute = GutterCleaningEtobicokeRouteImport.update({
+  id: '/gutter-cleaning/etobicoke',
+  path: '/gutter-cleaning/etobicoke',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GutterCleaningBurlingtonRoute =
+  GutterCleaningBurlingtonRouteImport.update({
+    id: '/gutter-cleaning/burlington',
+    path: '/gutter-cleaning/burlington',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GutterCleaningBramptonRoute = GutterCleaningBramptonRouteImport.update({
+  id: '/gutter-cleaning/brampton',
+  path: '/gutter-cleaning/brampton',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GutterCleaningAjaxRoute = GutterCleaningAjaxRouteImport.update({
+  id: '/gutter-cleaning/ajax',
+  path: '/gutter-cleaning/ajax',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/gutter-cleaning/ajax': typeof GutterCleaningAjaxRoute
+  '/gutter-cleaning/brampton': typeof GutterCleaningBramptonRoute
+  '/gutter-cleaning/burlington': typeof GutterCleaningBurlingtonRoute
+  '/gutter-cleaning/etobicoke': typeof GutterCleaningEtobicokeRoute
   '/gutter-cleaning/markham': typeof GutterCleaningMarkhamRoute
   '/gutter-cleaning/mississauga': typeof GutterCleaningMississaugaRoute
+  '/gutter-cleaning/north-york': typeof GutterCleaningNorthYorkRoute
+  '/gutter-cleaning/oakville': typeof GutterCleaningOakvilleRoute
+  '/gutter-cleaning/oshawa': typeof GutterCleaningOshawaRoute
+  '/gutter-cleaning/pickering': typeof GutterCleaningPickeringRoute
+  '/gutter-cleaning/richmond-hill': typeof GutterCleaningRichmondHillRoute
+  '/gutter-cleaning/scarborough': typeof GutterCleaningScarboroughRoute
   '/gutter-cleaning/toronto': typeof GutterCleaningTorontoRoute
+  '/gutter-cleaning/vaughan': typeof GutterCleaningVaughanRoute
+  '/gutter-cleaning/whitby': typeof GutterCleaningWhitbyRoute
   '/junk-removal/markham': typeof JunkRemovalMarkhamRoute
   '/junk-removal/mississauga': typeof JunkRemovalMississaugaRoute
   '/junk-removal/toronto': typeof JunkRemovalTorontoRoute
@@ -132,9 +219,21 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/gutter-cleaning/ajax': typeof GutterCleaningAjaxRoute
+  '/gutter-cleaning/brampton': typeof GutterCleaningBramptonRoute
+  '/gutter-cleaning/burlington': typeof GutterCleaningBurlingtonRoute
+  '/gutter-cleaning/etobicoke': typeof GutterCleaningEtobicokeRoute
   '/gutter-cleaning/markham': typeof GutterCleaningMarkhamRoute
   '/gutter-cleaning/mississauga': typeof GutterCleaningMississaugaRoute
+  '/gutter-cleaning/north-york': typeof GutterCleaningNorthYorkRoute
+  '/gutter-cleaning/oakville': typeof GutterCleaningOakvilleRoute
+  '/gutter-cleaning/oshawa': typeof GutterCleaningOshawaRoute
+  '/gutter-cleaning/pickering': typeof GutterCleaningPickeringRoute
+  '/gutter-cleaning/richmond-hill': typeof GutterCleaningRichmondHillRoute
+  '/gutter-cleaning/scarborough': typeof GutterCleaningScarboroughRoute
   '/gutter-cleaning/toronto': typeof GutterCleaningTorontoRoute
+  '/gutter-cleaning/vaughan': typeof GutterCleaningVaughanRoute
+  '/gutter-cleaning/whitby': typeof GutterCleaningWhitbyRoute
   '/junk-removal/markham': typeof JunkRemovalMarkhamRoute
   '/junk-removal/mississauga': typeof JunkRemovalMississaugaRoute
   '/junk-removal/toronto': typeof JunkRemovalTorontoRoute
@@ -151,9 +250,21 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/gutter-cleaning/ajax': typeof GutterCleaningAjaxRoute
+  '/gutter-cleaning/brampton': typeof GutterCleaningBramptonRoute
+  '/gutter-cleaning/burlington': typeof GutterCleaningBurlingtonRoute
+  '/gutter-cleaning/etobicoke': typeof GutterCleaningEtobicokeRoute
   '/gutter-cleaning/markham': typeof GutterCleaningMarkhamRoute
   '/gutter-cleaning/mississauga': typeof GutterCleaningMississaugaRoute
+  '/gutter-cleaning/north-york': typeof GutterCleaningNorthYorkRoute
+  '/gutter-cleaning/oakville': typeof GutterCleaningOakvilleRoute
+  '/gutter-cleaning/oshawa': typeof GutterCleaningOshawaRoute
+  '/gutter-cleaning/pickering': typeof GutterCleaningPickeringRoute
+  '/gutter-cleaning/richmond-hill': typeof GutterCleaningRichmondHillRoute
+  '/gutter-cleaning/scarborough': typeof GutterCleaningScarboroughRoute
   '/gutter-cleaning/toronto': typeof GutterCleaningTorontoRoute
+  '/gutter-cleaning/vaughan': typeof GutterCleaningVaughanRoute
+  '/gutter-cleaning/whitby': typeof GutterCleaningWhitbyRoute
   '/junk-removal/markham': typeof JunkRemovalMarkhamRoute
   '/junk-removal/mississauga': typeof JunkRemovalMississaugaRoute
   '/junk-removal/toronto': typeof JunkRemovalTorontoRoute
@@ -171,9 +282,21 @@ export interface FileRouteTypes {
     | '/contact'
     | '/services'
     | '/sitemap.xml'
+    | '/gutter-cleaning/ajax'
+    | '/gutter-cleaning/brampton'
+    | '/gutter-cleaning/burlington'
+    | '/gutter-cleaning/etobicoke'
     | '/gutter-cleaning/markham'
     | '/gutter-cleaning/mississauga'
+    | '/gutter-cleaning/north-york'
+    | '/gutter-cleaning/oakville'
+    | '/gutter-cleaning/oshawa'
+    | '/gutter-cleaning/pickering'
+    | '/gutter-cleaning/richmond-hill'
+    | '/gutter-cleaning/scarborough'
     | '/gutter-cleaning/toronto'
+    | '/gutter-cleaning/vaughan'
+    | '/gutter-cleaning/whitby'
     | '/junk-removal/markham'
     | '/junk-removal/mississauga'
     | '/junk-removal/toronto'
@@ -189,9 +312,21 @@ export interface FileRouteTypes {
     | '/contact'
     | '/services'
     | '/sitemap.xml'
+    | '/gutter-cleaning/ajax'
+    | '/gutter-cleaning/brampton'
+    | '/gutter-cleaning/burlington'
+    | '/gutter-cleaning/etobicoke'
     | '/gutter-cleaning/markham'
     | '/gutter-cleaning/mississauga'
+    | '/gutter-cleaning/north-york'
+    | '/gutter-cleaning/oakville'
+    | '/gutter-cleaning/oshawa'
+    | '/gutter-cleaning/pickering'
+    | '/gutter-cleaning/richmond-hill'
+    | '/gutter-cleaning/scarborough'
     | '/gutter-cleaning/toronto'
+    | '/gutter-cleaning/vaughan'
+    | '/gutter-cleaning/whitby'
     | '/junk-removal/markham'
     | '/junk-removal/mississauga'
     | '/junk-removal/toronto'
@@ -207,9 +342,21 @@ export interface FileRouteTypes {
     | '/contact'
     | '/services'
     | '/sitemap.xml'
+    | '/gutter-cleaning/ajax'
+    | '/gutter-cleaning/brampton'
+    | '/gutter-cleaning/burlington'
+    | '/gutter-cleaning/etobicoke'
     | '/gutter-cleaning/markham'
     | '/gutter-cleaning/mississauga'
+    | '/gutter-cleaning/north-york'
+    | '/gutter-cleaning/oakville'
+    | '/gutter-cleaning/oshawa'
+    | '/gutter-cleaning/pickering'
+    | '/gutter-cleaning/richmond-hill'
+    | '/gutter-cleaning/scarborough'
     | '/gutter-cleaning/toronto'
+    | '/gutter-cleaning/vaughan'
+    | '/gutter-cleaning/whitby'
     | '/junk-removal/markham'
     | '/junk-removal/mississauga'
     | '/junk-removal/toronto'
@@ -226,9 +373,21 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  GutterCleaningAjaxRoute: typeof GutterCleaningAjaxRoute
+  GutterCleaningBramptonRoute: typeof GutterCleaningBramptonRoute
+  GutterCleaningBurlingtonRoute: typeof GutterCleaningBurlingtonRoute
+  GutterCleaningEtobicokeRoute: typeof GutterCleaningEtobicokeRoute
   GutterCleaningMarkhamRoute: typeof GutterCleaningMarkhamRoute
   GutterCleaningMississaugaRoute: typeof GutterCleaningMississaugaRoute
+  GutterCleaningNorthYorkRoute: typeof GutterCleaningNorthYorkRoute
+  GutterCleaningOakvilleRoute: typeof GutterCleaningOakvilleRoute
+  GutterCleaningOshawaRoute: typeof GutterCleaningOshawaRoute
+  GutterCleaningPickeringRoute: typeof GutterCleaningPickeringRoute
+  GutterCleaningRichmondHillRoute: typeof GutterCleaningRichmondHillRoute
+  GutterCleaningScarboroughRoute: typeof GutterCleaningScarboroughRoute
   GutterCleaningTorontoRoute: typeof GutterCleaningTorontoRoute
+  GutterCleaningVaughanRoute: typeof GutterCleaningVaughanRoute
+  GutterCleaningWhitbyRoute: typeof GutterCleaningWhitbyRoute
   JunkRemovalMarkhamRoute: typeof JunkRemovalMarkhamRoute
   JunkRemovalMississaugaRoute: typeof JunkRemovalMississaugaRoute
   JunkRemovalTorontoRoute: typeof JunkRemovalTorontoRoute
@@ -333,11 +492,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JunkRemovalMarkhamRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gutter-cleaning/whitby': {
+      id: '/gutter-cleaning/whitby'
+      path: '/gutter-cleaning/whitby'
+      fullPath: '/gutter-cleaning/whitby'
+      preLoaderRoute: typeof GutterCleaningWhitbyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/vaughan': {
+      id: '/gutter-cleaning/vaughan'
+      path: '/gutter-cleaning/vaughan'
+      fullPath: '/gutter-cleaning/vaughan'
+      preLoaderRoute: typeof GutterCleaningVaughanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gutter-cleaning/toronto': {
       id: '/gutter-cleaning/toronto'
       path: '/gutter-cleaning/toronto'
       fullPath: '/gutter-cleaning/toronto'
       preLoaderRoute: typeof GutterCleaningTorontoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/scarborough': {
+      id: '/gutter-cleaning/scarborough'
+      path: '/gutter-cleaning/scarborough'
+      fullPath: '/gutter-cleaning/scarborough'
+      preLoaderRoute: typeof GutterCleaningScarboroughRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/richmond-hill': {
+      id: '/gutter-cleaning/richmond-hill'
+      path: '/gutter-cleaning/richmond-hill'
+      fullPath: '/gutter-cleaning/richmond-hill'
+      preLoaderRoute: typeof GutterCleaningRichmondHillRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/pickering': {
+      id: '/gutter-cleaning/pickering'
+      path: '/gutter-cleaning/pickering'
+      fullPath: '/gutter-cleaning/pickering'
+      preLoaderRoute: typeof GutterCleaningPickeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/oshawa': {
+      id: '/gutter-cleaning/oshawa'
+      path: '/gutter-cleaning/oshawa'
+      fullPath: '/gutter-cleaning/oshawa'
+      preLoaderRoute: typeof GutterCleaningOshawaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/oakville': {
+      id: '/gutter-cleaning/oakville'
+      path: '/gutter-cleaning/oakville'
+      fullPath: '/gutter-cleaning/oakville'
+      preLoaderRoute: typeof GutterCleaningOakvilleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/north-york': {
+      id: '/gutter-cleaning/north-york'
+      path: '/gutter-cleaning/north-york'
+      fullPath: '/gutter-cleaning/north-york'
+      preLoaderRoute: typeof GutterCleaningNorthYorkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gutter-cleaning/mississauga': {
@@ -354,6 +569,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GutterCleaningMarkhamRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gutter-cleaning/etobicoke': {
+      id: '/gutter-cleaning/etobicoke'
+      path: '/gutter-cleaning/etobicoke'
+      fullPath: '/gutter-cleaning/etobicoke'
+      preLoaderRoute: typeof GutterCleaningEtobicokeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/burlington': {
+      id: '/gutter-cleaning/burlington'
+      path: '/gutter-cleaning/burlington'
+      fullPath: '/gutter-cleaning/burlington'
+      preLoaderRoute: typeof GutterCleaningBurlingtonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/brampton': {
+      id: '/gutter-cleaning/brampton'
+      path: '/gutter-cleaning/brampton'
+      fullPath: '/gutter-cleaning/brampton'
+      preLoaderRoute: typeof GutterCleaningBramptonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gutter-cleaning/ajax': {
+      id: '/gutter-cleaning/ajax'
+      path: '/gutter-cleaning/ajax'
+      fullPath: '/gutter-cleaning/ajax'
+      preLoaderRoute: typeof GutterCleaningAjaxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -362,9 +605,21 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  GutterCleaningAjaxRoute: GutterCleaningAjaxRoute,
+  GutterCleaningBramptonRoute: GutterCleaningBramptonRoute,
+  GutterCleaningBurlingtonRoute: GutterCleaningBurlingtonRoute,
+  GutterCleaningEtobicokeRoute: GutterCleaningEtobicokeRoute,
   GutterCleaningMarkhamRoute: GutterCleaningMarkhamRoute,
   GutterCleaningMississaugaRoute: GutterCleaningMississaugaRoute,
+  GutterCleaningNorthYorkRoute: GutterCleaningNorthYorkRoute,
+  GutterCleaningOakvilleRoute: GutterCleaningOakvilleRoute,
+  GutterCleaningOshawaRoute: GutterCleaningOshawaRoute,
+  GutterCleaningPickeringRoute: GutterCleaningPickeringRoute,
+  GutterCleaningRichmondHillRoute: GutterCleaningRichmondHillRoute,
+  GutterCleaningScarboroughRoute: GutterCleaningScarboroughRoute,
   GutterCleaningTorontoRoute: GutterCleaningTorontoRoute,
+  GutterCleaningVaughanRoute: GutterCleaningVaughanRoute,
+  GutterCleaningWhitbyRoute: GutterCleaningWhitbyRoute,
   JunkRemovalMarkhamRoute: JunkRemovalMarkhamRoute,
   JunkRemovalMississaugaRoute: JunkRemovalMississaugaRoute,
   JunkRemovalTorontoRoute: JunkRemovalTorontoRoute,
